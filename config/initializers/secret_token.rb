@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MedicalCalendar::Application.config.secret_key_base = '8e8d0dc1355822e2c0e2effbb68290a463cd4dbec3f4d1d9df9879792b17d851eb018d2d4868580fbc3d97aee4dc3af03a5d46ff6a5001cdd4e66760224341b6'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+MedicalCalendar::Application.config.secret_key_base = secure_token
+
