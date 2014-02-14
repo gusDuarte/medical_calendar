@@ -1,11 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Medical Calendar
 
-Things you may want to cover:
+This is the Server side of Medical Calendar system.
 
-* Ruby version
+
+* Ruby version: 2.0.1
 
 * System dependencies
 
