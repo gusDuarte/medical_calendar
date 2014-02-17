@@ -1,13 +1,17 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header> 
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "Medical Calendar", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
+      
+        <ul class="navbar-right">
+          <%= link_to "Home", root_path %>
         </ul>
-      </nav>
+	<ul class="navbar-right">
+          <%= link_to "Help", help_path %>
+        </ul>
+      
     </div>
   </div>
+</nav>
 </header>
