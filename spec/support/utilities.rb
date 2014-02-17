@@ -1,4 +1,3 @@
-module ApplicationHelper
 def full_title(page_title)
   base_title = "Medical Calendar"
   if page_title.empty?
@@ -7,6 +6,3 @@ def full_title(page_title)
     "#{base_title} | #{page_title}"
   end
 end
-end
-
-
