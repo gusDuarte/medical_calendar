@@ -9,9 +9,9 @@ describe "StaticPages" do
     
     it { should have_link('Home',      href: root_path) }
     #it { should have_link('Settings',  href: settings_path(user)) }
-    #it { should have_link('About',     href: about_path(user)) }
-    #it { should have_link('Contact',   href: contact_path) }
-    #it { should have_link('Help',      href: help_path) }
+    it { should have_link('About',     href: about_path) }
+    it { should have_link('Contact',   href: contact_path) }
+    it { should have_link('Help',      href: help_path) }
     
   end
 
@@ -46,4 +46,12 @@ describe "StaticPages" do
     it_should_behave_like "all static pages"
   end
 
+  describe "Contact page" do
+    before { visit contact_path } 
+   
+    let(:page_title) { 'Contact' }
+    let(:heading) { 'Contact' }
+
+    it_should_behave_like "all static pages"
+  end
 end
