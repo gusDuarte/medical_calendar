@@ -6,6 +6,7 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate'
+gem 'gettext_i18n_rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
@@ -16,6 +17,7 @@ group :development, :test do
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.3.6'
   gem 'rails_layout'
+  gem 'gettext', '>=3.0.2', :require => false
 end
 
 group :test do
