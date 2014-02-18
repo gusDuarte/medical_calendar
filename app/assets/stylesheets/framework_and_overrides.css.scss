@@ -1,45 +1,210 @@
-// import the CSS framework
 @import "bootstrap";
 
-// make all images responsive by default
-img {
-  @extend .img-responsive;
-  margin: 0 auto;
+/* mixins, variables, etc. */
+$grayMediumLight: #eaeaea;
+$grayLight: #999;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing;
+}
+
+/*universal*/
+
+html {
+     overflow-y: scroll;
+}
+
+
+
+main {
+    @extend .container;
+    padding-bootom: 80px;
+    margin-top: 80px;
+}
+
+section {
+	overflow: auto;
+}
+
+textarea {
+	 resize: vertical;
+}
+
+.center {
+	text-align: center;
+	h1 {
+	    margin-bottom: 10px;
+	}
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+h1 {
+   font-size: 3em;
+   letter-spacing: -2px;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+h2 {
+   font-size: 1.2em;
+   letter-spacing: -1px;
+   margin-bottom: 30px;
+   text-align: center;
+   font-weight: normal;
+   color: $grayLight;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+      float: left;
+      margin-right: 10px;
+      font-size: 1.7em;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      padding-top: 9px;
+      font-weight: bold;
+      line-height: 1;
+      &:hover {
+            color: #fff;
+	    text-decoration: none;
+      }
+}
+
+.navbar-nav {
+    margin: 12px  -8px;
+    a{
+	padding: 15px;
+	color: #999;
+	font-size: 1.1em;
+    }
+}
+
+
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+  a {
+      color: #555;
+      &:hover {
+	  color: #222;
+      }
   }
-// override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
+  small {
+      float: left;
+  }
+  ul {
+      float: right;
+      list-style: none;
+      li {
+	  float: left;
+	  margin-left: 10px;
+      }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLight;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+ 
+
+  /* forms */
+ 
+  input, textarea, select, .uneditable-input {
+      border: 1px solid #bbb;
+      width: 100%;
+      margin-bottom: 15px;
+      @include box_sizing;
   }
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create your own classes
-// to make views framework-neutral
-.column {
-  @extend .col-md-6;
-  @extend .text-center;
+  input {
+      height: auto !important;
   }
-.form {
-  @extend .col-md-6;
+
+  #error_explanation {
+      color: #f00;
+      ul {
+	  list-style: none;
+	  margin: 0 0 18px 0;
+      }
   }
-.form-centered {
-  @extend .col-md-6;
-  @extend .text-center;
+
+  .field_with_errors {
+      @extend .control-group;
+      @extend .error;
   }
-.submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
+
+
+
+/* Users index */
+ 
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLight;
+    &:last-child {
+      border-bottom: 1px solid $grayLight;
+    }
   }
-// apply styles to HTML elements
-// to make views framework-neutral
-main {
-  @extend .container;
-  background-color: #eee;
-  padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px; // accommodate the navbar
-  }
-section {
-  @extend .row;
-  margin-top: 20px;
-  }
+}
