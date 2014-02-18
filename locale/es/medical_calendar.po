@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: medical_calendar 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-18 15:00-0200\n"
+"POT-Creation-Date: 2014-02-18 21:40-0200\n"
 "PO-Revision-Date: 2014-02-18 14:48-0200\n"
 "Last-Translator: Gustavo Duarte <gus.duarte@gmail.com>\n"
 "Language-Team: Spanish\n"
@@ -18,8 +18,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "About"
+msgstr "Conozcanos"
+
+msgid "About Us"
+msgstr "Conozcanos"
+
+msgid "Contact"
+msgstr "Contacto"
+
+msgid "Dashboard"
+msgstr "Tablero"
+
 msgid "Doctors"
 msgstr "Medicos"
 
+msgid "Help"
+msgstr "Ayuda"
+
 msgid "Home"
 msgstr "Inicio"
+
+msgid "Login"
+msgstr "Ingreso"
+
+msgid "Medical Calendar"
+msgstr "Agenda Medica"
+
+msgid "Patients"
+msgstr "Pacientes"
+
+#, fuzzy
+msgid "Sign in"
+msgstr "Crear cuenta"
+
+msgid "Sign up"
+msgstr "Crear cuenta"

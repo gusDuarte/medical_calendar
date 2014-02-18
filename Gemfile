@@ -18,6 +18,7 @@ group :development, :test do
   gem 'childprocess', '0.3.6'
   gem 'rails_layout'
   gem 'gettext', '>=3.0.2', :require => false
+  gem 'gettext_test_log'
 end
 
 group :test do

@@ -7,23 +7,36 @@ describe "StaticPages" do
 
     it { should have_title(full_title(page_title)) }
     
-    it { should have_link('Home',      href: root_path) }
-    #it { should have_link('Settings',  href: settings_path(user)) }
-    it { should have_link('About',     href: about_path) }
-    it { should have_link('Contact',   href: contact_path) }
-    it { should have_link('Help',      href: help_path) }
+    it { should have_link(_('Dashboard'), href: dashboard_path) }
+    #it { should have_link(_('Settings'), href: settings_path(user)) }
+    it { should have_link(_('About'),     href: about_path) }
+    it { should have_link(_('Contact'),   href: contact_path) }
+    it { should have_link(_('Help'),      href: help_path) }
     
   end
 
 
-  describe "Home page" do
-    before { visit root_path }
 
-    let(:page_title) { '' }
-    let(:heading) { '' }
+  describe "Login page" do
+    before { visit root_path } 
+   
+    let(:page_title) { _('Login') }
+    let(:heading) { _('Login') }
 
-    it { should have_content('Medicos') }
-    it { should have_content('Pacientes') }
+    #it { should have_link(_('Sign in'), href: signin_path) }
+    #it { should have_link(_('Sign up'), href: signup_path) }
+
+    it_should_behave_like "all static pages"    
+  end
+
+  describe "Dashboard page" do
+    before { visit dashboard_path }
+
+    let(:page_title) { _('Dashboard') }
+    let(:heading) { _('Dashboard') }
+
+    it { should have_content(_('Doctors')) }
+    it { should have_content(_('Patients')) }
 
     it_should_behave_like "all static pages"
   end
@@ -31,8 +44,8 @@ describe "StaticPages" do
   describe "About page" do
     before { visit about_path } 
    
-    let(:page_title) { 'About Us' }
-    let(:heading) { 'About Us' }
+    let(:page_title) { _('About Us') }
+    let(:heading) { _('About Us') }
     
     it_should_behave_like "all static pages"
   end
@@ -40,8 +53,8 @@ describe "StaticPages" do
   describe "Help page" do
     before { visit help_path } 
    
-    let(:page_title) { 'Help' }
-    let(:heading) { 'Help' }
+    let(:page_title) { _('Help') }
+    let(:heading) { _('Help') }
 
     it_should_behave_like "all static pages"
   end
@@ -49,8 +62,8 @@ describe "StaticPages" do
   describe "Contact page" do
     before { visit contact_path } 
    
-    let(:page_title) { 'Contact' }
-    let(:heading) { 'Contact' }
+    let(:page_title) { _('Contact') }
+    let(:heading) { _('Contact') }
 
     it_should_behave_like "all static pages"
   end

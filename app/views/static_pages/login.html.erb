@@ -1,2 +1,12 @@
-<h1>StaticPages#login</h1>
-<p>Find me in app/views/static_pages/login.html.erb</p>
+<% provide(:title, _('Login')) %>
+<div class="jumbotron">
+
+  <h1><%= _('Medical Calendar') %></h1>
+  <p>
+    _('Calendar system hubs several distributed calendar and delivered the events to Doctors client mobiles')
+  </p>
+
+  <%= link_to _('Sign in'), '#', class: "btn btn-large btn-primary" %>
+  <%= link_to _('Sign up'), signup_path %>
+</div> 
+

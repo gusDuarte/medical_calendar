@@ -1,13 +1,19 @@
 MedicalCalendar::Application.routes.draw do
+  #get "users/new"
+  #get "users/destroy"
   #get "static_pages/login"
   #get "static_pages/home"
   #get "static_pages/help"
   #get "static_pages/about"
 
-  root 'static_pages#home'
-  match '/help',      to: 'static_pages#help',    via: 'get'
-  match '/about',     to: 'static_pages#about',   via: 'get'
-  match '/contact',   to: 'static_pages#contact', via: 'get'
+  root 'static_pages#login'
+  match '/help',      to: 'static_pages#help',      via: 'get'
+  match '/about',     to: 'static_pages#about',     via: 'get'
+  match '/contact',   to: 'static_pages#contact',   via: 'get'
+  match '/dashboard', to: 'static_pages#dashboard', via: 'get'
+  match '/signin',    to: 'sessions#signin',        via: 'get'
+  match '/signup',    to: 'users#new',              via: 'get'
+  match '/sigout',    to: 'users#destroy',          via: 'delete'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

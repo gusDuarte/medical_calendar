@@ -1,8 +1,6 @@
 class StaticPagesController < ApplicationController
-  def login
-  end
 
-  def home
+  def login
   end
 
   def help
@@ -12,6 +10,9 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+  end
+
+  def dashboard
   end
 
 end
