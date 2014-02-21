@@ -1,0 +1,23 @@
+<% provide(:title, _('Sign in')) %>
+<h1><%= _('Sign in') %></h1>
+
+<div class="row">
+  <div class= "col-md-4 col-md-offset-4">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+          
+
+         <div class="input-group-md">
+	    <%= f.text_field :email , class: 'form-control', autofocus: true,  placeholder: _('Email address') %>
+	 </div>
+	 
+	 <div class="input-group-md">
+            <%= f.password_field :password , class: 'form-control', autofocus: true,  placeholder: _('Password') %>
+	 </div>
+         
+	 <div class="input-group-btn">
+	    <%= f.submit _('Sign in'), class: "btn btn-md btn-primary" %>
+	 </div>
+      <% end %>
+      <p><%= _('New user?')%> <%= link_to _('Sign up now !'), signup_path %></p>
+  </div>
+</div>
