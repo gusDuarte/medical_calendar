@@ -1,12 +1,16 @@
 <% provide(:title, _('Login')) %>
-<div class="jumbotron">
+<div class="center jumbotron">
 
   <h1><%= _('Medical Calendar') %></h1>
-  <p>
-    _('Calendar system hubs several distributed calendar and delivered the events to Doctors client mobiles')
-  </p>
+  <h2>
+    <%= _('Calendar system  integrates events from distributed calendars and deliveres updates to Doctors client mobiles.')%>
+  </h2>
 
-  <%= link_to _('Sign in'), '#', class: "btn btn-large btn-primary" %>
+  <div>
+  <%= link_to _('Sign in'), signup_path, class: "btn btn-primary btn-lg", role: "button" %>
+  </div>  
+  <div class="link-bellow-button">
   <%= link_to _('Sign up'), signup_path %>
+  </div>
 </div> 
 

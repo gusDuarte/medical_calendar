@@ -1,4 +1,5 @@
 MedicalCalendar::Application.routes.draw do
+  resources :users
   #get "users/new"
   #get "users/destroy"
   #get "static_pages/login"
@@ -11,9 +12,12 @@ MedicalCalendar::Application.routes.draw do
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/dashboard', to: 'static_pages#dashboard', via: 'get'
-  match '/signin',    to: 'sessions#signin',        via: 'get'
+  match '/settings',  to: 'static_pages#settings',  via: 'get'
+  match '/signin',    to: 'sessions#new',           via: 'get'
+  match '/singout',   to: 'sessions#destroy',       via: 'delete'
   match '/signup',    to: 'users#new',              via: 'get'
-  match '/sigout',    to: 'users#destroy',          via: 'delete'
+
+ 
 
 
   # The priority is based upon order of creation: first created -> highest priority.

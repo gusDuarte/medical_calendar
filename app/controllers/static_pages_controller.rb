@@ -15,4 +15,7 @@ class StaticPagesController < ApplicationController
   def dashboard
   end
 
+  def settings
+  end
+
 end

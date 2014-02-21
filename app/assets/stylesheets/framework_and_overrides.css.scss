@@ -54,10 +54,12 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
+    text-rendering: optimizelegibility;
 }
 
 h1 {
    font-size: 3em;
+   font-weight: bold;
    letter-spacing: -2px;
    margin-bottom: 30px;
    text-align: center;
@@ -165,20 +167,20 @@ aside {
 }
  
 
-  /* forms */
- 
-  input, textarea, select, .uneditable-input {
-      border: 1px solid #bbb;
-      width: 100%;
-      margin-bottom: 15px;
-      @include box_sizing;
-  }
+/* forms */
 
-  input {
-      height: auto !important;
-  }
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
 
-  #error_explanation {
+input {
+    height: auto !important;
+}
+
+#error_explanation {
       color: #f00;
       ul {
 	  list-style: none;
@@ -187,7 +189,7 @@ aside {
   }
 
   .field_with_errors {
-      @extend .control-group;
+      @extend .form-group;
       @extend .error;
   }
 
@@ -207,4 +209,11 @@ aside {
       border-bottom: 1px solid $grayLight;
     }
   }
+}
+
+/* Login Box */
+
+.link-bellow-button {
+    position: relative;
+    top: 10px;
 }

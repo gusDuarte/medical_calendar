@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: medical_calendar 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-18 21:40-0200\n"
+"POT-Creation-Date: 2014-02-19 11:07-0200\n"
 "PO-Revision-Date: 2014-02-18 14:48-0200\n"
 "Last-Translator: Gustavo Duarte <gus.duarte@gmail.com>\n"
 "Language-Team: Spanish\n"
@@ -24,6 +24,9 @@ msgstr "Conozcanos"
 msgid "About Us"
 msgstr "Conozcanos"
 
+msgid "Calendar system  integrates events from distributed calendars and deliveres updates to Doctors client mobiles."
+msgstr ""
+
 msgid "Contact"
 msgstr "Contacto"
 
@@ -32,6 +35,9 @@ msgstr "Tablero"
 
 msgid "Doctors"
 msgstr "Medicos"
+
+msgid "Go"
+msgstr "Entrar"
 
 msgid "Help"
 msgstr "Ayuda"
@@ -48,9 +54,14 @@ msgstr "Agenda Medica"
 msgid "Patients"
 msgstr "Pacientes"
 
-#, fuzzy
 msgid "Sign in"
-msgstr "Crear cuenta"
+msgstr "Entrar"
 
 msgid "Sign up"
 msgstr "Crear cuenta"
+
+msgid "View docotors list, create new ones, manage their calendar."
+msgstr ""
+
+msgid "View patients list, create new ones, create appointments"
+msgstr ""
