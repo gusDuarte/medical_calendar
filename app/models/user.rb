@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
   before_create :create_remember_token
-
+  belongs_to :medical_center
   
 
 
