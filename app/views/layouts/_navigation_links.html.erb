@@ -1,8 +1,6 @@
-<%# add navigation links to this file %>
-
- <%= link_to _('Dashboard'), dashboard_path %>
- 
- <%= link_to _('Settings'), settings_path %>
-  
- <%= link_to _('Sing out'), '#' %>
+<% if signed_in? %>
+    <%= link_to _('Dashboard'), dashboard_path  %>
+    <%= link_to _('Settings'), settings_path %>
+    <%= link_to _('Sign out'), signout_path, method: 'delete' %>   
+<% end %>
  

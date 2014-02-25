@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "StaticPages" do
   subject { page }
 
-  shared_examples_for "all static pages" do
+  shared_examples_for "almost static pages" do
 
     it { should have_title(full_title(page_title)) }
     
@@ -23,10 +23,13 @@ describe "StaticPages" do
     let(:page_title) { _('Login') }
     let(:heading) { _('Login') }
 
-    #it { should have_link(_('Sign in'), href: signin_path) }
-    #it { should have_link(_('Sign up'), href: signup_path) }
 
-    it_should_behave_like "all static pages"    
+    it { should_not have_link(_('Dashboard'), href: dashboard_path) }
+    it { should_not have_link(_('Settings'), href: settings_path) }
+    it { should_not have_link(_('Sign out'), href: signup_path) }
+
+    it { should have_selector('a.btn', text: _('Sign in')) }
+    it { should have_link(_('Sign up now !'), href: signup_path) }
   end
 
   describe "Dashboard page" do
@@ -38,7 +41,7 @@ describe "StaticPages" do
     it { should have_content(_('Doctors')) }
     it { should have_content(_('Patients')) }
 
-    it_should_behave_like "all static pages"
+    it_should_behave_like "almost static pages"
   end
 
   describe "About page" do
@@ -47,7 +50,7 @@ describe "StaticPages" do
     let(:page_title) { _('About Us') }
     let(:heading) { _('About Us') }
     
-    it_should_behave_like "all static pages"
+    it_should_behave_like "almost static pages"
   end
 
   describe "Help page" do
@@ -56,7 +59,7 @@ describe "StaticPages" do
     let(:page_title) { _('Help') }
     let(:heading) { _('Help') }
 
-    it_should_behave_like "all static pages"
+    it_should_behave_like "almost static pages"
   end
 
   describe "Contact page" do
@@ -65,6 +68,6 @@ describe "StaticPages" do
     let(:page_title) { _('Contact') }
     let(:heading) { _('Contact') }
 
-    it_should_behave_like "all static pages"
+    it_should_behave_like "almost static pages"
   end
 end

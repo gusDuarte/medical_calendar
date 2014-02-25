@@ -2,7 +2,6 @@ MedicalCalendar::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-
   root 'static_pages#login'
   match '/help',      to: 'static_pages#help',      via: 'get'
   match '/about',     to: 'static_pages#about',     via: 'get'
@@ -10,7 +9,7 @@ MedicalCalendar::Application.routes.draw do
   match '/dashboard', to: 'static_pages#dashboard', via: 'get'
   match '/settings',  to: 'static_pages#settings',  via: 'get'
   match '/signin',    to: 'sessions#new',           via: 'get'
-  match '/singout',   to: 'sessions#destroy',       via: 'delete'
+  match '/signout',   to: 'sessions#destroy',       via: 'delete'
   match '/signup',    to: 'users#new',              via: 'get'
 
  
