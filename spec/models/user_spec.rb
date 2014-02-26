@@ -1,23 +1,22 @@
 require 'spec_helper'
 
 describe "User" do
-  before { @user = User.new(name: "Test User", email: "test.user@gmail.com", rol: "recepcionist", medical_center: "Acme Medical Center", password: "foobar", password_confirmation: "foobar" ) }
+
+  before { @user = User.new(name: "Test User", email: "test.user@gmail.com", rol: "center_admin", 
+                            password: "foobar", password_confirmation: "foobar" ) }
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
   it { should respond_to(:rol) }
-  it { should respond_to(:medical_center) }
+  it { should respond_to(:medical_center_id) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:password_digest) }
-  it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
-  it { should respond_to(:authenticate) }
 
   it { should be_valid }
-
 
 
   describe "when name is not present" do

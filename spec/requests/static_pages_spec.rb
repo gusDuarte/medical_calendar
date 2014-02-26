@@ -7,8 +7,6 @@ describe "StaticPages" do
 
     it { should have_title(full_title(page_title)) }
     
-    it { should have_link(_('Dashboard'), href: dashboard_path) }
-    #it { should have_link(_('Settings'), href: settings_path(user)) }
     it { should have_link(_('About'),     href: about_path) }
     it { should have_link(_('Contact'),   href: contact_path) }
     it { should have_link(_('Help'),      href: help_path) }
@@ -29,20 +27,9 @@ describe "StaticPages" do
     it { should_not have_link(_('Sign out'), href: signup_path) }
 
     it { should have_selector('a.btn', text: _('Sign in')) }
-    it { should have_link(_('Sign up now !'), href: signup_path) }
+    it { should have_link(_('Create an Account NOW !'), href: signup_path) }
   end
 
-  describe "Dashboard page" do
-    before { visit dashboard_path }
-
-    let(:page_title) { _('Dashboard') }
-    let(:heading) { _('Dashboard') }
-
-    it { should have_content(_('Doctors')) }
-    it { should have_content(_('Patients')) }
-
-    it_should_behave_like "almost static pages"
-  end
 
   describe "About page" do
     before { visit about_path } 

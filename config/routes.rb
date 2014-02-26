@@ -12,7 +12,7 @@ MedicalCalendar::Application.routes.draw do
   match '/signin',    to: 'sessions#new',           via: 'get'
   match '/signout',   to: 'sessions#destroy',       via: 'delete'
   match '/signup',    to: 'users#new',              via: 'get'
-  match '/mcnew',     to: 'medical_centers#new',    via: 'get'
+
 
  
 
