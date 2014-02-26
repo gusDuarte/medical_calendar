@@ -5,13 +5,16 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @mc   = MedicalCenter.new
   end
 
   def create 
-    @user = User.new(user_params)
-    @user.rol = 'recepcionist'
-
-    if @user.save
+    # @user = User.new(params[:user])
+    @mc = MedicalCenter.new(mc_params)
+    @user = @mc.users.build(user_params)
+    @user.rol = 'center_admin'
+     
+    if @mc.save
       sign_in @user
       flash[:notice] = "Welcome"
       redirect_to @user
@@ -32,4 +35,8 @@ private
   def user_params
     params.require(:user).permit(:name, :email, :password, 
                                  :password_confirmation)
+  end
+  
+  def mc_params
+    params.require(:mc).permit(:name, :phone_number, :address)
   end
