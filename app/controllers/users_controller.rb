@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+  before_action :correct_user,   only: [:edit, :update]
+
+
   def show
     @user = User.find(params[:id])
+  end
+
+  def edit
   end
 
   def new
@@ -9,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def create 
-    # @user = User.new(params[:user])
     @mc = MedicalCenter.new(mc_params)
     @user = @mc.users.build(user_params)
     @user.rol = 'center_admin'
@@ -39,4 +44,10 @@ private
   
   def mc_params
     params.require(:mc).permit(:name, :phone_number, :address)
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    @mc = @user.medical_center
+    redirect_to(root_url) unless current_user?(@user)
   end

@@ -1,0 +1,27 @@
+<% provide(:title, _('Update your data')) %>
+
+<h1><%= _('Update your data') %></h1>
+<div class="row">
+    <div class= "col-md-4 col-md-offset-4">
+      <%= form_tag :action =>'edit' %>
+          <h2 class="form-signin-heading"> <%= _('Center data') %></h2>
+ 
+	  <div class="input-group-md">
+            <%= text_field :mc, :name ,         class: 'form-control', autofocus: true %>
+	    <%= text_field :mc, :phone_number,  class: 'form-control', autofocus: true %>
+	    <%= text_field :mc, :address ,      class: 'form-control', autofocus: true %>
+	  </div>
+	  
+          <h2 class="form-signin-heading"> <%= _('Administrator data') %></h2>
+
+          <div class="input-group-md">
+            <%= text_field :user, :name ,         class: 'form-control', autofocus: true %>
+	    <%= text_field :user, :email ,        class: 'form-control', autofocus: true %>
+            <%= password_field :user, :password , class: 'form-control', autofocus: true %>
+	    <%= password_field :user, :password_confirmation , class: 'form-control', autofocus: true %>
+          </div> 
+
+       <%= submit_tag _('Save changes'), class: "btn btn-lg btn-primary btn-block" %>
+       
+    </div>
+</div>

@@ -8,7 +8,6 @@ MedicalCalendar::Application.routes.draw do
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/dashboard', to: 'static_pages#dashboard', via: 'get'
-  match '/settings',  to: 'static_pages#settings',  via: 'get'
   match '/signin',    to: 'sessions#new',           via: 'get'
   match '/signout',   to: 'sessions#destroy',       via: 'delete'
   match '/signup',    to: 'users#new',              via: 'get'

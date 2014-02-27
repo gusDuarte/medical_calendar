@@ -1,0 +1,25 @@
+<%  provide(:title, _('Create new account')) %>
+
+<div class="row">
+    <div class= "col-md-4 col-md-offset-4">
+      <%= form_tag :action=>'create' %>
+          <h2 class="form-signin-heading"> <%= _('Medical Center data') %></h2>
+ 
+	  <div class="input-group-md">
+            <%= text_field :mc, :name ,         class: 'form-control', autofocus: true,  placeholder: _('Medical Center Name') %>
+	    <%= text_field :mc, :phone_number,  class: 'form-control', autofocus: true,  placeholder: _('Phone Number') %>
+	    <%= text_field :mc, :address ,      class: 'form-control', autofocus: true,  placeholder: _('Address') %>
+	  </div>
+	  
+          <h2 class="form-signin-heading"> <%= _('Administrator data') %></h2>
+
+          <div class="input-group-md">
+            <%= text_field :user, :name ,         class: 'form-control', autofocus: true,  placeholder: _('Name') %>
+	    <%= text_field :user, :email ,        class: 'form-control', autofocus: true,  placeholder: _('Email address') %>
+            <%= password_field :user, :password , class: 'form-control', autofocus: true,  placeholder: _('Password') %>
+	    <%= password_field :user, :password_confirmation , class: 'form-control', autofocus: true,  placeholder: _('Password Confirmation') %>
+          </div> 
+
+       <%= submit_tag _('Create account'), class: "btn btn-lg btn-primary btn-block" %>
+    </div>
+</div>

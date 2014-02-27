@@ -23,7 +23,6 @@ describe "StaticPages" do
 
 
     it { should_not have_link(_('Dashboard'), href: dashboard_path) }
-    it { should_not have_link(_('Settings'), href: settings_path) }
     it { should_not have_link(_('Sign out'), href: signup_path) }
 
     it { should have_selector('a.btn', text: _('Sign in')) }
