@@ -4,7 +4,7 @@
     <div class= "col-md-4 col-md-offset-4">
       <%= form_tag :action=>'create' %>
           <h2 class="form-signin-heading"> <%= _('Medical Center data') %></h2>
- 
+	  <%= render 'shared/error_messages', object: @mc %>
 	  <div class="input-group-md">
             <%= text_field :mc, :name ,         class: 'form-control', autofocus: true,  placeholder: _('Medical Center Name') %>
 	    <%= text_field :mc, :phone_number,  class: 'form-control', autofocus: true,  placeholder: _('Phone Number') %>
@@ -12,7 +12,7 @@
 	  </div>
 	  
           <h2 class="form-signin-heading"> <%= _('Administrator data') %></h2>
-
+	  <%= render 'shared/error_messages', object: @user %>
           <div class="input-group-md">
             <%= text_field :user, :name ,         class: 'form-control', autofocus: true,  placeholder: _('Name') %>
 	    <%= text_field :user, :email ,        class: 'form-control', autofocus: true,  placeholder: _('Email address') %>

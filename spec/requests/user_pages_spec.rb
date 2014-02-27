@@ -17,6 +17,10 @@ describe "User pages" do
       it "should not create a Medical Center" do
         expect { click_button submit }.not_to change(MedicalCenter, :count)
       end
+      
+      it "should show an error message" do
+        expect { should have_selector('div.alert-danger', text: 'Error')  }
+      end
     end  
     
     describe "with valid information" do
