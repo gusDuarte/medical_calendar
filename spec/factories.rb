@@ -1,11 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    name                  "Gustavo Duarte"
-    email                 "gus.duarte@gmail.com"
+    sequence(:name)  { |n| "Person #{n}" }
+    sequence(:email) { |n| "person_#{n}@example.com" }
     rol                   "center_admin"
     password              "foobar"
     password_confirmation "foobar"
-    medical_center
   end
   
   factory :medical_center do
@@ -13,4 +12,11 @@ FactoryGirl.define do
     address      "Calle Artigas 12345"
     phone_number "473123456"
   end
+
+  factory :doctor do
+    name "Bill Cosby"
+    email "bill.cosby@mail.com"
+    phone_number "099788123"
+  end
+
 end
