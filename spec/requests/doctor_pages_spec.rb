@@ -22,17 +22,20 @@ describe "Doctor pages" do
         sign_in user
         visit doctors_path
       end
-
-      it { should have_content (_('Doctors')) }
       
+      describe "searching" do
+        it { should have_selector('button.btn') }
+      end
+            
       describe "pagination" do
         before(:all) { 30.times { FactoryGirl.create(:doctor) } }
         after(:all) { Doctor.delete_all }
         
-        #it { should have_selector ('div.pagination') }
         it "should list each user" do
           Doctor.paginate(page: 1).each do |user|
-            expect(page).to have_selector('li', text: doctor.name)  
+            expect(page).to have_selector('td', text: doctor.name)  
+            expect(page).to have_selector('td', text: doctor.phone_number)  
+            expect(page).to have_selector('td', text: doctor.email)  
           end # Doctor.paginate
         end  # should list each user
       end # pagination

@@ -1,3 +1,8 @@
-<li>
-  <%= link_to doctor.name, doctor %>
-</li>
+<tr>
+<td> <div class="glyphicon glyphicon-user"></div>
+<td <%= link_to doctor.name, _('doctor') %> </td>
+<td><%= link_to doctor.phone_number, _('phone_number') %> </td>
+<td><%= link_to doctor.email, ('e-mail') %></td>
+</tr> 
+
+
