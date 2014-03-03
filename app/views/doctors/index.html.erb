@@ -1,16 +1,21 @@
 <% provide(:title, _('Doctors')) %>
-
+    
 <div class="row">  
+
+ 
   <div class="col-lg-4">
+    <%= form_tag doctors_path, :method => 'get', :id => "doctors_search" do %>
     <div class="input-group input-group-lg">
       <span class="input-group-btn">
-        <button class="btn btn-lg" type="button">
-	  <span class="glyphicon glyphicon-search" </span>
-	</button>
-      </span>
-      <input type="text" class="form-control">
+	<%= button_tag(type:'submit', class:"btn btn-lg") do %>
+	<span class="glyphicon glyphicon-search"></span>
+	<% end %>
+	</span>
+      <%= text_field_tag :search, params[:search], class:"form-control" %>
     </div><!-- /input-group -->
-  </div><!-- /.col-lg-4 -->
+    <% end %>
+  </div><!-- /.col-lg-4 -->      
+
   <div class="col-lg-4">
     <div class="btn-group">
       <button type="button" class="btn btn-lg">

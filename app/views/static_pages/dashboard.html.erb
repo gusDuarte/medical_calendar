@@ -4,14 +4,18 @@
     <div class="jumbotron">
       <h1><%= _('Doctors') %></h1>
       <p><%= _('View doctors list, create new ones, manage their calendar.') %></p>
-      <p class="center"><a class="btn btn-primary btn-lg" role="button"><%= _('Go') %></a></p>
+      <p class="center">
+        <%= link_to _('Go'), doctors_path, class: "btn btn-primary btn-lg", role: "button" %>
+      </p>	
     </div>
   </div>
   <div class="col-md-6">
     <div class="jumbotron">
       <h1><%= _('Patients') %></h1>
       <p><%= _('View patients list, create new ones, create appointments') %></p>
-      <p class="center"><a class="btn btn-primary btn-lg" role="button"><%= _('Go') %></a></p>
+      <p class="center">
+        <%= link_to _('Go'), '#', class: "btn btn-primary btn-lg", role: "button" %>
+      </p>
     </div>
   </div>
 </div>

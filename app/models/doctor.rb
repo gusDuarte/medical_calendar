@@ -4,4 +4,12 @@ class Doctor < ActiveRecord::Base
   validates :email, presence: true
   validates :phone_number, presence: true
 
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")  
+    else
+      scoped
+    end
+  end
+
 end
