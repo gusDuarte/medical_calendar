@@ -30,9 +30,9 @@ describe "User pages" do
         fill_in "Phone Number",          with: "4731236"
 
         fill_in "Name",                  with: "Example User"
-        fill_in "Email address",                 with: "user@example.com"
+        fill_in "Email address",         with: "user@example.com"
         fill_in "Password",              with: "foobar"
-        fill_in "Password Confirmation",          with: "foobar"
+        fill_in "Password Confirmation", with: "foobar"
       end
       it "should create an NEW user and a medical center" do
         expect { click_button submit }.to change(User, :count).by(1)
@@ -41,8 +41,7 @@ describe "User pages" do
       
       describe "after saving the user" do
         before { click_button submit }
-        let(:user) { User.find_by(email: 'user@example.com') }
-
+        
         it { should have_link(_('Dashboard')) }
         it { should have_selector('div.alert-success', text: 'Welcome') }
       end # after saving the user   

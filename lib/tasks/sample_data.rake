@@ -15,7 +15,9 @@ namespace :db do
       name  = Faker::Name.name
       email = "gustavo#{n+1}@gmail.com"
       phone_number  = "12300#{n+1}"
+      speciality = "Cardiology"
       mc.doctors.create!(name: name,
+		       speciality: speciality, 
                        email: email,
                        phone_number: phone_number )
     end
