@@ -12,48 +12,17 @@ describe "Doctor pages" do
     end # visiting Doctor List view
   end # for non-signed-in users
 
-  describe "for signed-in users" do
-    describe "List view" do
-      let(:mc)     { FactoryGirl.create(:medical_center) }
-      let(:user)   { FactoryGirl.create(:user, medical_center: mc) }
-      let(:doctor) { FactoryGirl.create(:doctor, medical_center: mc) }
-      before do
-        sign_in user
-        visit doctors_path
-      end
-      
-      describe "searching" do
-        it { should have_selector('button.btn') }
-      end
-            
-      describe "pagination" do
-        before(:all) { 30.times { FactoryGirl.create(:doctor) } }
-        after(:all) { Doctor.delete_all }
-        
-        it "should list each user" do
-          Doctor.paginate(page: 1).each do |user|
-            expect(page).to have_selector('td', text: doctor.name)  
-            expect(page).to have_selector('td', text: doctor.phone_number)  
-            expect(page).to have_selector('td', text: doctor.email)  
-          end # Doctor.paginate
-        end  # should list each user
-      end # pagination
-    end # List view
-  end # for signed-in users
-
-
-
-
+    
   describe "doctor creation" do 
+    let (:submit) { _('New Doctor') }
     let(:mc)     { FactoryGirl.create(:medical_center) }
     let(:user)   { FactoryGirl.create(:user, medical_center: mc) }
-    let (:submit) { _('New Doctor') }
     
     before do 
       sign_in user
       visit new_doctor_path 
-    end
-    
+    end  
+      
     describe "with invalid information" do      
       it "should not create an Doctor" do
         expect { click_button submit }.not_to change(Doctor, :count)
@@ -70,16 +39,42 @@ describe "Doctor pages" do
         fill_in "Email Address",         with: "user@example.com"
         fill_in "Phone Number",          with: "4731236"
       end
+      
       it "should create an NEW Doctor" do
         expect { click_button submit }.to change(Doctor, :count).by(1)
       end
       
       describe "after saving the doctor" do
-        before { click_button submit }
-        
+        before { click_button submit }  
         it { should have_link(_('Dashboard')) }
         it { should have_selector('div.alert-success', text: 'New Doctor created') }
       end # after saving the user   
-    end # with valid information  
+    end # with valid information
   end # create a doctor
+
+    
+  describe "edit" do
+    let (:mc)     { FactoryGirl.create(:medical_center) }
+    let (:user)   { FactoryGirl.create(:user, medical_center: mc) }
+    let (:doctor) { FactoryGirl.create(:doctor, medical_center: mc) }
+ 
+    before do
+      sign_in user
+      visit edit_doctor_path(doctor) 
+    end
+   
+    
+    describe "edit forms" do
+      it { should have_title(_('Doctor data edit')) }
+      it { should have_link(_('Data')) }
+      it { should have_link(_('Patients')) }
+    
+      it { should have_field('doctor_name',  with: doctor.name) }
+      it { should have_field('doctor_email', with: doctor.email) }
+      it { should have_field('doctor_phone_number', with: doctor.phone_number) }
+    
+      it { should have_button(_('Update')) }
+    end
+
+  end  
 end # Doctor pages  

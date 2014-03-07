@@ -18,5 +18,4 @@ FactoryGirl.define do
     email "bill.cosby@mail.com"
     phone_number "099788123"
   end
-
 end
