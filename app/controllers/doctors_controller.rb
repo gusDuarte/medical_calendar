@@ -1,7 +1,10 @@
 class DoctorsController < ApplicationController
   before_action :signed_in_user, only: [:index, :new, :edit, :update, :destroy]
   
-
+  def edit
+    @doctor = Doctor.find(params[:id])
+  end 
+  
   def index
     @doctors = Doctor.find_by_user(current_user).search(params[:search], current_user).paginate(page: params[:page])
   end
@@ -33,3 +36,5 @@ private
   def doctor_params
     params.require(:doctor).permit(:name, :speciality, :email, :phone_number)
   end
+  
+  

@@ -1,8 +1,6 @@
 <% provide(:title, _('Doctors')) %>
     
-<div class="row">  
-
- 
+<div class="row">   
   <div class="col-lg-4">
     <%= form_tag doctors_path, :method => 'get', :id => "doctors_search" do %>
     <div class="input-group input-group-lg">
@@ -23,31 +21,28 @@
       </a>
     </div>
   </div>
-</div>
 
-<div class="doctor-list">
-<%= will_paginate renderer: BootstrapPagination::Rails %>
-
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-      <th></th>
-      <th><%= _('Name')%></th>
-      <th><%= _('Phone number')%></th>
-      <th><%= _('E-mail')%></th>
-      </tr> 
-    </thead>
-    <tbody>
-       
-      <%= render @doctors %>
-      
-     </tbody>
-  </table>
-</div>
+</div> <!-- row -->
 
 <%= will_paginate renderer: BootstrapPagination::Rails %>
-</div> <!-- doctor-list-->
+<div id="doctor-information-container">
 
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+	<tr>
+	  <th></th>
+	  <th><%= _('Name')%></th>
+	  <th><%= _('Phone number')%></th>
+	  <th><%= _('E-mail')%></th>
+	</tr> 
+      </thead>
+      <tbody> 
+	<%= render @doctors %>
+      </tbody>
+    </table>
+  </div> <!-- table-responsive --> 
+</div> <!-- doctor-information-container-->
+<%= will_paginate renderer: BootstrapPagination::Rails %>
 
 
