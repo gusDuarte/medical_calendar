@@ -14,7 +14,16 @@ class UsersController < ApplicationController
     @user = User.new
     @mc   = MedicalCenter.new
   end
-
+  
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+  
   def create 
     @mc = MedicalCenter.new(mc_params)
     @user = @mc.users.build(user_params)

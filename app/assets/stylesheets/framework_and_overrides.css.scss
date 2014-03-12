@@ -115,20 +115,22 @@ p {
 }
 
 
-/* Doctor page */
-.doctor-list{
+/* Doctor, patient page */
+.doctor-patient-list{
   margin-top:  30px;
   padding-top: 50px;
 }
 
-#doctor-button-sections{
-    clear: both;
-    float: right;
+.button-sections{
+	clear: both;
+    	float: right;
 }
-#doctor-information-container{
-    clear: both;
-    margin-top: 60px;
+    
+.information-container{
+	clear: both;
+	margin-top: 60px;	
 }
+
 
 .pagination {
    clear: both;
@@ -139,6 +141,7 @@ p {
 /* footer */
 
 footer {
+  clear: both;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;

@@ -1,5 +1,6 @@
 class DoctorsController < ApplicationController
   before_action :signed_in_user, only: [:index, :new, :edit, :update, :destroy]
+
   
   def edit
     @doctor = Doctor.find(params[:id])
@@ -22,6 +23,16 @@ class DoctorsController < ApplicationController
       redirect_to @doctor
     else
       render 'new'
+    end
+  end
+
+  def update
+    @doctor = Doctor.find(params[:id])
+    if @doctor.update_attributes(doctor_params)
+      flash[:success] = "Profile updated"
+      redirect_to @doctor
+    else
+      render 'edit'
     end
   end
 

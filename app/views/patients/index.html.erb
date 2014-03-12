@@ -1,8 +1,8 @@
-<% provide(:title, _('Doctors')) %>
+<% provide(:title, _('Patients')) %>
     
 <div class="row">   
   <div class="col-lg-4">
-    <%= form_tag doctors_path, :method => 'get', :id => "doctors_search" do %>
+    <%= form_tag patients_path, :method => 'get', :id => "doctors_search" do %>
     <div class="input-group input-group-lg">
       <span class="input-group-btn">
 	<%= button_tag(type:'submit', class:"btn btn-lg") do %>
@@ -16,7 +16,7 @@
 
   <div class="col-lg-4">
     <div class="btn-group">
-      <a class="btn btn-default btn-lg" role="button" href=<%= new_doctor_path %> >
+      <a class="btn btn-default btn-lg" role="button" href=<%= new_patient_path %> >
       <span class="glyphicon glyphicon-plus"></span>
       </a>
     </div>
@@ -37,7 +37,7 @@
 	</tr> 
       </thead>
       <tbody> 
-	<%= render @doctors %>
+	<%= render @patients %>
       </tbody>
     </table>
   </div> <!-- table-responsive --> 

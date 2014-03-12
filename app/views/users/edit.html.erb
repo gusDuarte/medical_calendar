@@ -3,7 +3,7 @@
 <h1><%= _('Update your data') %></h1>
 <div class="row">
     <div class= "col-md-4 col-md-offset-4">
-      <%= form_tag :action =>'edit' %>
+      <%= form_tag(user_path(@user), method: :patch) do %>
           <h2 class="form-signin-heading"> <%= _('Center data') %></h2>
  
 	  <div class="input-group-md">
@@ -21,7 +21,7 @@
 	    <%= password_field :user, :password_confirmation , class: 'form-control', autofocus: true %>
           </div> 
 
-       <%= submit_tag _('Save changes'), class: "btn btn-lg btn-primary btn-block" %>
-       
+	  <%= submit_tag _('Save changes'), class: "btn btn-lg btn-primary btn-block" %>
+       <% end %>
     </div>
 </div>

@@ -1,0 +1,30 @@
+<% provide(:title, _('Patient profile')) %>
+
+<div class="row">
+<div class="button-sections">
+  <%= render 'patient_buttons' %>
+  
+  <script type="text/javascript">
+    $("#btn-personal-data").button('toggle');
+  </script>
+</div>
+</div>
+
+<div class="row">
+<div class="information-container">
+  <div class="col-md-4 col-md-offset-4">      
+    <div class="input-group-md">	    
+	    <%= label_tag  :name, 'Name' %>
+            <%= text_field :patient, :name ,  class: 'form-control', disabled: '' %>
+	    	    
+	    <%= label_tag  :email , 'Email' %>
+	    <%= text_field :patient, :email ,        class: 'form-control',  disabled: '' %>
+	    
+	    <%= label_tag  :phone_number , 'Phone Number' %>
+	    <%= text_field :patient, :phone_number,  class: 'form-control',  disabled: '' %>
+    </div>   
+    <%= link_to _('Edit'), edit_patient_path(@patient), class: "btn btn-lg btn-primary btn-block", role: "button" %>
+  </div>
+</div>
+</div>
+
