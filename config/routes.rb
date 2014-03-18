@@ -4,16 +4,19 @@ MedicalCalendar::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :doctors
   resources :appointments
+  resources :patients
+
 
   root 'static_pages#login'
-  match '/help',      to: 'static_pages#help',      via: 'get'
-  match '/about',     to: 'static_pages#about',     via: 'get'
-  match '/contact',   to: 'static_pages#contact',   via: 'get'
-  match '/dashboard', to: 'static_pages#dashboard', via: 'get'
-  match '/signin',    to: 'sessions#new',           via: 'get'
-  match '/signout',   to: 'sessions#destroy',       via: 'delete'
-  match '/signup',    to: 'users#new',              via: 'get'
-  match '/newdoctor', to: 'doctors#new',            via: 'get'
+  match '/help',       to: 'static_pages#help',      via: 'get'
+  match '/about',      to: 'static_pages#about',     via: 'get'
+  match '/contact',    to: 'static_pages#contact',   via: 'get'
+  match '/dashboard',  to: 'static_pages#dashboard', via: 'get'
+  match '/signin',     to: 'sessions#new',           via: 'get'
+  match '/signout',    to: 'sessions#destroy',       via: 'delete'
+  match '/signup',     to: 'users#new',              via: 'get'
+  match '/newdoctor',  to: 'doctors#new',            via: 'get'
+  match '/newpatient', to: 'patients#new',           via: 'get'
 
  
 

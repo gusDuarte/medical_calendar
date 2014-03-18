@@ -18,4 +18,9 @@ FactoryGirl.define do
     email "bill.cosby@mail.com"
     phone_number "099788123"
   end
+  factory :patient do
+    name "Juan Perez"
+    email "juan.perez@mail.com"
+    phone_number "099788123"
+  end
 end

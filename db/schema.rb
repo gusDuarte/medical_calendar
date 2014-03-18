@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20140312154017) do
 
   create_table "appointments", force: true do |t|
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140312154017) do
     t.datetime "updated_at"
   end
 
+ActiveRecord::Schema.define(version: 20140311150353) do
   create_table "doctors", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -55,9 +57,10 @@ ActiveRecord::Schema.define(version: 20140312154017) do
     t.string   "name"
     t.string   "email"
     t.string   "phone_number"
-    t.integer  "center_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "medical_center"
+    t.integer  "medical_center_id"
   end
 
   create_table "users", force: true do |t|
@@ -73,5 +76,4 @@ ActiveRecord::Schema.define(version: 20140312154017) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
-
 end
