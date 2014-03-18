@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140304143425) do
+ActiveRecord::Schema.define(version: 20140312154017) do
+
+  create_table "appointments", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "medical_center_id"
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "doctors", force: true do |t|
     t.string   "name"
@@ -21,6 +30,16 @@ ActiveRecord::Schema.define(version: 20140304143425) do
     t.datetime "updated_at"
     t.integer  "medical_center_id"
     t.string   "speciality"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "starts_at"
+    t.datetime "end_at"
+    t.boolean  "all_day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "medical_centers", force: true do |t|
