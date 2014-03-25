@@ -3,12 +3,16 @@
 
 <div class="row">
   <div class="button-sections">
-    <%= render 'doctor_buttons' %>
+    <%= render 'shared/doctor_buttons' %>
+    
     <script type="text/javascript">
       $("#btn-personal-data").button('toggle');
     </script>
+    
   </div>
 </div>
+
+<h1><%= @doctor.name %></h1>
 
 <div class="row">
 <div class="information-container">

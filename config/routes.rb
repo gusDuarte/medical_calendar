@@ -6,6 +6,9 @@ MedicalCalendar::Application.routes.draw do
   resources :appointments
   resources :patients
 
+  resources :doctors do
+    resources :appointments
+  end
 
   root 'static_pages#login'
   match '/help',       to: 'static_pages#help',      via: 'get'
